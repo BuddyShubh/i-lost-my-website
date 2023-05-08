@@ -1,0 +1,168 @@
+:root {
+  --black1: #393646;
+  --black2: #4f4557;
+  --black3: #6d5d6e;
+  --white: #EDF1D6;
+  --blue: #4e4ee3;
+  --pink: #b4238e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: var(--white);
+}
+
+html,
+body {
+  height: 100vh;
+  background-image: url("img/pexels-kaique-rocha-775201.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  height: 100%;
+}
+
+nav {
+  height: 10%;
+  background: var(--black1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  filter: drop-shadow(0px 0px 10px black);
+}
+
+nav a {
+  transition: background-color 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  box-shadow: inset black 0px 0px 5px 0px, black 0px 0px 4px 0px;
+  background-color: var(--black2);
+}
+
+.slide{
+  height: 50%;
+  overflow: hidden;
+  background-image: url("img/colorful-lotus-flower-sits-pond-with-sunset-background.jpg");
+  background-position: center;
+  background-size:cover;
+  animation: img-slide 5s;
+  animation-iteration-count: infinite;
+}
+
+.about {
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.about .text {
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: blurout 3s;
+  animation-timing-function: ease-in-out;
+}
+
+.about .photo {
+  background-image: url("img/small-house-built-peaceful-green-hill-high-up-mountains.jpg");
+  background-position: center;
+  background-size:cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.about .photo .photo-text{
+  position: relative;
+  height: 100px;
+  top: 375px;
+  background-color: black;
+  opacity: 0;
+  transition: 1s;
+  padding: 10px;
+}
+
+.about .photo:hover .photo-text{
+  position: relative;
+  height: 100px;
+  top: 276px;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.gallery {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.service {
+  display: grid;
+  grid-template-rows: inherit 1fr;
+  grid-gap: 10px;
+}
+
+.service .cards {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 10px;
+  grid-gap: 10px;
+}
+
+.service .cards .card {
+  display: grid;
+  grid-template-rows: inherit 1fr;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--black2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service .cards .card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+
+@keyframes blurout {
+  from {
+    filter: blur(10px);
+    opacity: 1;
+    transform: translateY(100px);
+  }
+  to {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
